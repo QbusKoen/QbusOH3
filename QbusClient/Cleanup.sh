@@ -1,11 +1,9 @@
 #!/bin/bash
-#{
 
-rm -R /home/pi/QbusOpenHab/QbusClient/'HomeCenter\Temp\'
-rm /home/pi/QbusOpenHab/QbusClient/*.zip
+cleanup() {
+  rm -R /usr/bin/qbus/qbusclient/'HomeCenter\Temp\' > /dev/null 2>&1
+  rm /usr/bin/qbus/qbusclient/*.zip > /dev/null 2>&1
+}
 
-#} || { # catch
-    echo "test"
-    # save log for exception
-#}
+trap cleanup 0
 
